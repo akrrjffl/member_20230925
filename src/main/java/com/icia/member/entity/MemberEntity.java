@@ -8,27 +8,27 @@ import lombok.Setter;
 import javax.persistence.*;
 
 @Entity
-@Setter(AccessLevel.PRIVATE)
 @Getter
+@Setter(AccessLevel.PRIVATE)
 @Table(name = "member_table")
 public class MemberEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(length = 50, nullable = false, unique = true)
+    @Column(nullable = false, unique = true)
     private String memberEmail;
 
-    @Column(length = 20, nullable = false)
+    @Column(nullable = false)
     private String memberPassword;
 
-    @Column(length = 20, nullable = false)
+    @Column(nullable = false)
     private String memberName;
 
-    @Column(length = 20)
+    @Column
     private String memberBirth;
 
-    @Column(length = 30)
+    @Column
     private String memberMobile;
 
     public static MemberEntity toSaveEntity(MemberDTO memberDTO) {
@@ -52,3 +52,18 @@ public class MemberEntity {
         return memberEntity;
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
